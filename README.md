@@ -63,12 +63,14 @@ This project aims to enhance the functionality of an **Ender 3 3D printer** by e
 ### Printer Setup
 
 
-> [!NOTE] Make sure there is an SD card in your 3D printer, you will need this so you can upload gcode files to your printer
+> [!NOTE] Make sure there is an SD card in your 3D printer, you will need this so you can upload gcode files to your printer.
 
 
 ![Setup photo](https://github.com/user-attachments/assets/031299db-4132-420d-b779-4fbe2650cbf4)
 
 I used a USB cable to connect my Raspberry Pi to my printer.
+
+> [!NOTE] Make sure your 3D printer is switched on. I made the mistake of thinking it was on because it connected on OctoPrint. Your RaspberryPi is capable of powering your printer, but it cannot power it while it is printing!
 
 Go to your web interface for OctoPi. This will be http://octopi.local by default, or http://yoursethostname.local if you set a hostname during installation. You should come to a page that looks like this:
 
