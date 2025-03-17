@@ -13,6 +13,7 @@ This project aims to enhance the functionality of an **Ender 3 3D printer** by e
 - **Print Management**: Upload and manage print files directly from a web interface.
 - **Print Progress**: Monitor print status in real-time (e.g., temperature, progress bar).
 - **Automated Workflow**: Schedule, cancel, and control multiple prints wirelessly.
+
 ## Components Needed
 - [x] Raspberry Pi (Model 3)
 - [x] Ender 3 3D Printer
@@ -84,5 +85,40 @@ From here you can upload print files to the SD card in your printer and run prin
 
 At this point you have a way to send files to your printer and print them from your computer. 
 
+### UltiMaker Cura
 
+During my 3D printing journey, I discovered that my printer was unable to directly read and process STL files. In search of a solution, I explored various options online and came across [Cura](https://ultimaker.com/software/ultimaker-cura/), a free and widely used slicing software. Cura enables the conversion of STL files into G-code, making them compatible with my printer. Additionally, the software offers built-in functionality for monitoring print progress. However, since my printer lacks networking capabilities, utilizing this feature required additional setup and modifications.
+
+1. Go to Marketplace in the top right corner
+2. Search "Octoprint" and it should come up with [OctoPrint Connections](https://marketplace.ultimaker.com/app/cura/plugins/fieldofview/OctoPrintPlugin)
+3. Install the Plugin and reset Cura
+4. Add your printer to Cura as a non-networked printer
+5. Go to Settings > Printer > Manager Printers
+6. Select your printer and you should see a Connect OctoPrint button
+
+![Ender 3 Connect](https://github.com/user-attachments/assets/661c3afe-f3d2-430c-9a91-b26fa68c7e93)
+
+7. Click Connect OctoPrint
+8. Your printer should show up in the list
+	1. If it doesn't click Add
+	2. Set your instance name as whatever you want it to be
+	3. Set your IP Address or Hostname to the link you use to access OctoPrint (http://octopi.local by default)
+	4. Click Ok
+	5. This should prompt you to enter your username and password for OctoPrint
+	6. Once you have entered the username and password authorise Cura and this should've generated an API key for Cura
+> [!NOTE] DO NOT SHARE THIS WITH ANYONE
+9. Click connect and now you can use Cura to slice 3D files and send them directly to your printer to print
+
+If done correctly you should see this in the bottom right corner once you slice your model.
+
+![Print with OctoPrint](https://github.com/user-attachments/assets/f8dc4e50-4ebb-4905-a703-f46396356889)
+
+
+Just hit Print with OctoPrint and your printer should start printing.
+
+![OctoPrint Start](https://github.com/user-attachments/assets/1a07ee09-b5e2-4b6e-a398-a1a3482daabc)
+
+![IMG_2013(1)](https://github.com/user-attachments/assets/a151d068-c804-4ee4-93cf-bc022e5347de)
+
+Now you have a simple way to both slice and print in one location.
 
